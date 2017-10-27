@@ -1,0 +1,28 @@
+{
+  "name": "alexaskillskeleton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "BABEL_ENV=deploy webpack && cd build && zip -r -9 index.zip ./* && cd ..",
+    "deploy": "aws lambda update-function-code --function-name 'functionName' --zip-file 'fileb://build//index.zip'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^16.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "path": "^0.12.7",
+    "webpack": "^3.6.0",
+    "zip-webpack-plugin": "^2.0.0"
+  }
+}
